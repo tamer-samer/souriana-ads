@@ -41,16 +41,16 @@ const residenceOptions = [
 ];
 
 const platformOptions = [
-  { value: "Facebook Page", label: "صفحة فيسبوك" },
-  { value: "Facebook Group", label: "مجموعة فيسبوك" },
-  { value: "Telegram", label: "تليجرام" },
-  { value: "Instagram", label: "انستجرام" },
+  { value: "Facebook Page", label: "صفحة الفيسبوك" },
+  { value: "Facebook Group", label: "مجموعة الفيسبوك" },
+  { value: "Telegram", label: "تلغرام" },
+  { value: "Instagram", label: "انستغرام" },
 ];
 
 const adTypeOptions = [
   { value: "Post", label: "منشور" },
   { value: "Video", label: "فيديو" },
-  { value: "Instagram Story", label: "ستوري انستجرام" },
+  { value: "Instagram Story", label: "ستوري انستغرام" },
 ];
 
 export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
