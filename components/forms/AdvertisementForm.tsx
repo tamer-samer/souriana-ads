@@ -335,7 +335,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
   return (
     <Card
       id="advertisement-form"
-      className="bg-slate-800/50 border-teal-600/30 backdrop-blur-sm animate-fade-in-up animation-delay-400"
+      className="bg-slate-800/50 border-teal-600/30 backdrop-blur-sm"
     >
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">

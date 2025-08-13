@@ -44,7 +44,7 @@ export default function EducationalAdsPage() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in-up animation-delay-800">
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4">
               <SocialCard
                 icon={FiFacebook}
                 followers="+1.6M"
