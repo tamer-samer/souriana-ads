@@ -1,103 +1,81 @@
-import Image from "next/image";
+"use client";
 
-export default function Home() {
+import type React from "react";
+import { Button } from "@/components/ui/button";
+import { SocialCard } from "@/components/ui/SocialCard";
+import { AdvertisementForm } from "@/components/forms/AdvertisementForm";
+import { FiFacebook, FiInstagram } from "react-icons/fi";
+import { LiaTelegram } from "react-icons/lia";
+
+export default function EducationalAdsPage() {
+  const scrollToForm = () => {
+    const formElement = document.getElementById("advertisement-form");
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800">
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="flex flex-col lg:flex lg:flex-row lg:justify-around lg:items-start gap-12">
+          <div className="order-1 lg:order-2 w-full lg:w-auto lg:flex-shrink-0 space-y-8 animate-fade-in-right lg:flex lg:flex-col lg:items-center pt-10">
+            <div className="text-center">
+              <div className="relative inline-block">
+                <div className="animate-float">
+                  <img
+                    src="/logo.jpg"
+                    alt="سوريانا التعليمية"
+                    className="w-48 h-48 mx-auto animate-pulse-slow rounded-full border-4 border-teal-400 object-cover"
+                  />
+                  <Button
+                    onClick={scrollToForm}
+                    className="lg:hidden absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-teal-600 to-teal-500 hover:from-teal-700 hover:to-teal-600 text-white font-semibold px-6 py-2 text-sm transition-all duration-300 hover:scale-105 shadow-lg"
+                  >
+                    تواصل معنا
+                  </Button>
+                </div>
+              </div>
+              <div className="mt-8">
+                <h2 className="text-lg md:text-xl font-bold text-white mb-4 p-3">
+                  أهلاً بكم في الصفحة الرسمية للتعاون الإعلاني مع سوريانا
+                  التعليمية
+                </h2>
+              </div>
+            </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+            <div className="flex flex-col sm:flex-row justify-between items-center gap-4 animate-fade-in-up animation-delay-800">
+              <SocialCard
+                icon={FiFacebook}
+                followers="+1.6M"
+                bgColor="bg-blue-600/20"
+                borderColor="border-blue-500/30"
+                iconColor="text-blue-400"
+              />
+
+              <SocialCard
+                icon={FiInstagram}
+                followers="+375K"
+                bgColor="bg-pink-600/20"
+                borderColor="border-pink-500/30"
+                iconColor="text-pink-400"
+              />
+
+              <SocialCard
+                icon={LiaTelegram}
+                followers="+450K"
+                bgColor="bg-cyan-600/20"
+                borderColor="border-cyan-500/30"
+                iconColor="text-cyan-400"
+              />
+            </div>
+          </div>
+
+          <div className="order-2 lg:order-1 w-full lg:max-w-[500px] space-y-8 animate-fade-in-left">
+            <AdvertisementForm />
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      </div>
     </div>
   );
 }
