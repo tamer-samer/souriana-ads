@@ -141,7 +141,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <title>طلب إعلان جديد</title>
           </head>
-          <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 20px; direction: rtl;">
+          <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; margin: 0; padding: 10px; direction: rtl;">
             <table width="100%" cellpadding="0" cellspacing="0" style="max-width: 600px; margin: 0 auto; background: white; border-radius: 10px; box-shadow: 0 0 20px rgba(0,0,0,0.1);">
               <!-- Header -->
               <tr>
@@ -153,7 +153,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
               
               <!-- Content -->
               <tr>
-                <td style="padding: 30px;">
+                <td style="padding: 10px;">
                   <!-- Personal Info Section -->
                   <table width="100%" cellpadding="0" cellspacing="0" style="background: #f8fafc; border-right: 4px solid #14b8a6; border-radius: 5px; margin-bottom: 20px;">
                     <tr>
@@ -191,7 +191,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
                             </td>
                           </tr>
                           <tr>
-                            <td width="140" style="font-weight: 600; color: #0f172a;">📊 العدد التقريبي:</td>
+                            <td width="140" style="font-weight: 600; color: #0f172a;">📊 العدد:</td>
                             <td style="color: #475569;">${
                               formData.estimatedAds
                             } إعلان</td>
@@ -285,10 +285,10 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
                 <td style="background: #1e293b; color: white; text-align: center; padding: 20px; border-radius: 0 0 10px 10px;">
                   <p style="margin: 0 0 10px 0; font-size: 14px;">📧 تم إرسال هذا الطلب من موقع <a href="#" style="color: #14b8a6; text-decoration: none;">سوريانا للإعلانات التعليمية</a></p>
                   <p style="margin: 0; font-size: 14px;">📅 تاريخ الطلب: ${new Date().toLocaleDateString(
-                    "ar-SA",
+                    "ar-EG",
                     {
                       year: "numeric",
-                      month: "long",
+                      month: "numeric",
                       day: "numeric",
                       hour: "2-digit",
                       minute: "2-digit",
