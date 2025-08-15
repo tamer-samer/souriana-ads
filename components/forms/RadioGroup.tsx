@@ -35,12 +35,15 @@ export function RadioGroup({
 
   return (
     <div className={`space-y-3 ${className || ""}`}>
-      <Label className="text-teal-100 font-medium">
+      <Label className="text-teal-100 font-medium text-base">
         {label} {required && "*"}
       </Label>
       <div className="flex gap-6">
         {options.map((option) => (
-          <label key={option.value} className="flex items-center space-x-2 cursor-pointer">
+          <label
+            key={option.value}
+            className="flex items-center space-x-2 cursor-pointer text-base"
+          >
             <input
               type="radio"
               name={name}

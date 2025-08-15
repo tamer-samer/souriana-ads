@@ -20,7 +20,7 @@ export function SocialCard({
 }: SocialCardProps) {
   return (
     <Card
-      className={`${bgColor} ${borderColor} backdrop-blur-sm hover:scale-105 transition-transform duration-300 max-w-[300px] w-full flex-1 min-w-[200px]`}
+      className={`${bgColor} ${borderColor} backdrop-blur-sm hover:scale-105 transition-transform duration-300 max-w-[300px] lg:min-w-[190px] lg:max-w-[200px] w-full flex-1 min-w-[180px]`}
     >
       <CardContent className="p-4 text-center">
         <Icon className={`w-8 h-8 ${iconColor} mx-auto mb-2`} />

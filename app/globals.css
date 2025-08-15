@@ -110,6 +110,11 @@
   }
 }
 
+input[type="number"] {
+  direction: ltr;
+  text-align: right;
+}
+
 @keyframes fade-in-left {
   from {
     opacity: 0;

@@ -36,14 +36,14 @@ export function CheckboxGroup({
     onChange(newValues);
   };
 
-  const gridClassName = gridCols === 2 ? "grid-cols-2" : "flex flex-wrap";
+  const gridClassName = gridCols === 2 ? "grid-cols-2" : "grid-cols-1";
 
   return (
     <div className={`space-y-3 ${className || ""}`}>
-      <Label className="text-teal-100 font-medium">
+      <Label className="text-teal-100 font-medium text-base">
         {label} {required && "*"}
       </Label>
-      <div className={`grid ${gridClassName} gap-3`}>
+      <div className={`grid ${gridClassName} gap-3 xl:grid-cols-2`}>
         {options.map((option) => (
           <label
             key={option.value}
@@ -55,7 +55,7 @@ export function CheckboxGroup({
               onChange={() => handleChange(option.value)}
               className="w-4 h-4 text-teal-500 bg-slate-700 border-teal-600 rounded focus:ring-teal-500"
             />
-            <span className="text-white text-sm">{option.label}</span>
+            <span className="text-white text-base">{option.label}</span>
           </label>
         ))}
       </div>

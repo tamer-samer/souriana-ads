@@ -34,17 +34,19 @@ export function FormField({
   maxLength,
   className,
 }: FormFieldProps) {
-  const baseClassName = `bg-slate-700/50 border-teal-600/50 text-white placeholder:text-slate-400 focus:border-teal-400 ${
+  const baseClassName = `py-5 bg-slate-700/50 border-teal-600/50 text-white placeholder:text-slate-400 focus:border-teal-400 ${
     error ? "border-red-500" : ""
   } ${className || ""}`;
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     onChange(e.target.value);
   };
 
   return (
-    <div className="space-y-2">
-      <Label htmlFor={id} className="text-teal-100 font-medium">
+    <div className="space-y-2 flex-1">
+      <Label htmlFor={id} className="text-teal-100 font-medium text-base">
         {label} {required && "*"}
       </Label>
       {type === "textarea" ? (

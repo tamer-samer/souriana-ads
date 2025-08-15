@@ -18,7 +18,7 @@ export default function EducationalAdsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-900 via-teal-900 to-slate-800">
       <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="flex flex-col lg:flex lg:flex-row lg:justify-around lg:items-start gap-12">
+        <div className="flex flex-col lg:flex lg:flex-row lg:justify-between lg:items-start gap-12">
           <div className="order-1 lg:order-2 w-full lg:w-auto lg:flex-shrink-0 space-y-8 animate-fade-in-right lg:flex lg:flex-col lg:items-center pt-10">
             <div className="text-center">
               <div className="relative inline-block">
@@ -71,7 +71,7 @@ export default function EducationalAdsPage() {
             </div>
           </div>
 
-          <div className="order-2 lg:order-1 w-full lg:max-w-[500px] space-y-8 animate-fade-in-left">
+          <div className="order-2 lg:order-1 w-full lg:max-w-[900px] space-y-8 animate-fade-in-left">
             <AdvertisementForm />
           </div>
         </div>

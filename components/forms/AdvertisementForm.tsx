@@ -8,6 +8,7 @@ import { FormField } from "./FormField";
 import { RadioGroup } from "./RadioGroup";
 import { CheckboxGroup } from "./CheckboxGroup";
 import { toast } from "sonner";
+import { Separator } from "../ui/separator";
 
 export interface FormData {
   fullName: string;
@@ -181,7 +182,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
                           </tr>
                           <tr>
                             <td width="140" style="font-weight: 600; color: #0f172a; padding-bottom: 15px;">📱 الرقم:</td>
-                            <td style="color: #475569; padding-bottom: 15px;">
+                            <td style="color: #475569; padding-bottom: 15px;direction: ltr;">
                               <a href="https://wa.me/${formData.whatsappNumber.replace(
                                 /\D/g,
                                 ""
@@ -339,26 +340,28 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
     >
       <CardContent className="p-8">
         <form onSubmit={handleSubmit} className="space-y-6">
-          <FormField
-            id="fullName"
-            label="الاسم الكامل"
-            value={formData.fullName}
-            onChange={(value) => handleInputChange("fullName", value)}
-            error={errors.fullName}
-            placeholder="أدخل اسمك الكامل"
-            required
-          />
+          <div className="flex flex-col xl:flex-row xl:gap-3 justify-between gap-6">
+            <FormField
+              id="fullName"
+              label="الاسم الكامل"
+              value={formData.fullName}
+              onChange={(value) => handleInputChange("fullName", value)}
+              error={errors.fullName}
+              placeholder="أدخل اسمك الكامل"
+              required
+            />
 
-          <FormField
-            id="institutionName"
-            label="اسم المؤسسة التعليمية"
-            value={formData.institutionName}
-            onChange={(value) => handleInputChange("institutionName", value)}
-            error={errors.institutionName}
-            placeholder="أدخل اسم المؤسسة"
-            required
-          />
-
+            <FormField
+              id="institutionName"
+              label="اسم المؤسسة التعليمية"
+              value={formData.institutionName}
+              onChange={(value) => handleInputChange("institutionName", value)}
+              error={errors.institutionName}
+              placeholder="أدخل اسم المؤسسة"
+              required
+            />
+          </div>
+          <Separator className="bg-teal-600/30" />
           <RadioGroup
             name="residence"
             label="مكان الإقامة"
@@ -368,6 +371,7 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
             error={errors.residence}
             required
           />
+          <Separator className="bg-teal-600/30" />
 
           <CheckboxGroup
             label="منصات الإعلان"
@@ -376,7 +380,9 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
             options={platformOptions}
             error={errors.platforms}
             required
+            gridCols={0}
           />
+          <Separator className="bg-teal-600/30" />
 
           <CheckboxGroup
             label="نوع الإعلان"
@@ -387,30 +393,34 @@ export function AdvertisementForm({ onSubmitSuccess }: AdvertisementFormProps) {
             required
             gridCols={0}
           />
+          <Separator className="bg-teal-600/30" />
 
-          <FormField
-            id="estimatedAds"
-            label="العدد التقريبي للإعلانات"
-            type="number"
-            value={formData.estimatedAds}
-            onChange={(value) => handleInputChange("estimatedAds", value)}
-            error={errors.estimatedAds}
-            placeholder="أدخل العدد التقريبي"
-            min="1"
-            max="1000"
-            required
-          />
+          <div className="flex flex-col xl:flex-row xl:gap-3 justify-between gap-6">
+            <FormField
+              id="estimatedAds"
+              label="العدد التقريبي للإعلانات"
+              type="number"
+              value={formData.estimatedAds}
+              onChange={(value) => handleInputChange("estimatedAds", value)}
+              error={errors.estimatedAds}
+              placeholder="أدخل العدد التقريبي"
+              min="1"
+              max="1000"
+              required
+            />
 
-          <FormField
-            id="whatsappNumber"
-            label="رقم Whatsapp (مع رمز الدولة)"
-            type="tel"
-            value={formData.whatsappNumber}
-            onChange={(value) => handleInputChange("whatsappNumber", value)}
-            error={errors.whatsappNumber}
-            placeholder="e.g. +963933333333"
-            required
-          />
+            <FormField
+              id="whatsappNumber"
+              label="رقم Whatsapp (مع رمز الدولة)"
+              type="tel"
+              value={formData.whatsappNumber}
+              onChange={(value) => handleInputChange("whatsappNumber", value)}
+              error={errors.whatsappNumber}
+              placeholder="e.g. +963933333333"
+              required
+            />
+          </div>
+          <Separator className="bg-teal-600/30" />
 
           <FormField
             id="notes"
